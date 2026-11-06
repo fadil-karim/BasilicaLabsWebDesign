@@ -29,7 +29,7 @@ public/
                           the brief form
     fonts/                Flux, Instrument Sans, Instrument Serif (upright and italic)
     img/work/             portfolio screenshots, WebP at 800 and 1400 wide
-    img/social-thumbnail-v2.11.jpg   link-preview thumbnail, 1200 × 630
+    img/social-thumbnail-v2.12.jpg   link-preview thumbnail, 1200 × 630
     img/social-square-v2.11.jpg      square post for Instagram, 1080 × 1080
     img/favicon-v2.8.svg, img/apple-touch-icon-v2.8.png   the "F." mark
 social/                   sources for the social images (not served)
@@ -98,7 +98,7 @@ the bottom of every page.
 
 ## Social images
 
-- **Link-preview thumbnail** (`public/assets/img/social-thumbnail-v2.11.jpg`,
+- **Link-preview thumbnail** (`public/assets/img/social-thumbnail-v2.12.jpg`,
   1200 × 630) — what social sites and messaging apps show when the link is
   shared. The name, the logo and the promise sit in the centre 600 px, so apps
   that crop previews to a square, such as WhatsApp, still show them.
@@ -147,7 +147,7 @@ npx playwright screenshot --viewport-size="1080, 1080" \
   FormSubmit confirms each new address once: send one test brief from
   fkarimdesign.com and click the activation link it emails to the inbox.
 - **Share image.** `og:image` and `twitter:image` load
-  `https://fkarimdesign.com/assets/img/social-thumbnail-v2.11.jpg` from the
+  `https://fkarimdesign.com/assets/img/social-thumbnail-v2.12.jpg` from the
   site's own address.
 - **Links out.** The five portfolio sites, basilicalabs.ai, GitHub, YouTube,
   LinkedIn, Instagram and Telegram.
@@ -165,6 +165,13 @@ a new file name, as the Dynamic Connectome Lab's did when its homepage moved
 the brain up beside the lab's name (`-v2.10`). If a homepage's first screen
 ends above 735 px, capture at a smaller 40:21 size, such as 1280 × 672 at
 twice the pixel density, and scale it to 1400 × 735 so no white strip shows.
+
+Visual Neuroscience shows the site's own link-preview card rather than a
+homepage screenshot: the 1200 × 630 card at
+<https://visualneuroscience.ai/assets/social-card.jpg>, scaled to 1400 × 735
+(`-v2.12`). The same image fills the left frame of this site's link-preview
+thumbnail, so a new card there means re-rendering the thumbnail under a new
+name as well.
 
 ## The domain
 

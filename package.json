@@ -1,6 +1,6 @@
 {
   "name": "basilicalabswebdesign",
-  "version": "2.11.0",
+  "version": "2.12.0",
   "private": true,
   "description": "FKarim Design Studio - the sales site for Fadil Karim's design studio, at fkarimdesign.com. Cloudflare Workers static assets, no build step.",
   "scripts": {

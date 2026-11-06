@@ -122,9 +122,11 @@ batches: implement, verify, commit, push.
   joins the values of overlapping rules. Fonts and images are cached as
   immutable, so a changed font or image needs a new file name.
 - **Social images.** The link-preview thumbnail
-  (`assets/img/social-thumbnail-v2.11.jpg`, 1200 × 630) and a square post
+  (`assets/img/social-thumbnail-v2.12.jpg`, 1200 × 630) and a square post
   (`assets/img/social-square-v2.11.jpg`, 1080 × 1080) are rendered from
   `social/thumbnail.html` and `social/square.html` with the site's own fonts.
+  The thumbnail's frames show the Visual Neuroscience and Tia Tandy images
+  from `assets/img/work/`, so a new image for either means a new thumbnail.
   Keep the thumbnail's logo, headline and chips inside the centre 600 px so a
   square crop (WhatsApp) still shows them, and check it at small sizes. A
   changed image gets a new file name.
@@ -185,3 +187,4 @@ batches: implement, verify, commit, push.
 | v2.9 | FKarim Web Design becomes Built by Fid | The site now goes by Built by Fid, with Design Studio set in emerald beneath the name in the logo at the top and foot of every page. The new name carries through the page title, the comparison table, the preview that appears when the link is shared, the square Instagram post and the square logo, and the F in the browser tab now stands for Fid. |
 | v2.10 | The Dynamic Connectome Lab card shows its new homepage | The Dynamic Connectome Lab's screenshot now shows its new homepage, with the brain's wiring beside the lab's name at the top of the page, both in its card under your recent work and in the showcase at the top of your page. |
 | v2.11 | FKarim Design Studio, at its own address | The site now goes by FKarim Design Studio, with the FKarim name over Design Studio in the logo at the top and foot of every page. It now calls fkarimdesign.com its home, so shared links point to your own address and show a fresh preview carrying the new name, and the square Instagram post and the square logo match. |
+| v2.12 | Visual Neuroscience shows its latest social image | Visual Neuroscience now shows its latest social image, the brain's wiring in colour beside the atlas's name. It takes its turn in the showcase at the top of your page, fills its card under your recent work, and appears in the preview people see when your link is shared. |
