@@ -1,4 +1,4 @@
-"""Draw the square Built by Fid logo as a self-contained SVG.
+"""Draw the square FKarim Design Studio logo as a self-contained SVG.
 
 The composition is basilicalabs.ai's square logo (assets/brand/logo-square-*.png
 in that site's repository): the three sparkle stars stacked over the wordmark,
@@ -20,7 +20,7 @@ from fontTools.pens.boundsPen import BoundsPen
 
 FONTS = Path(__file__).resolve().parent.parent / 'public' / 'assets' / 'fonts'
 CANVAS = 1080                                   # Instagram's full-size square
-WORDMARK, LINE = 'Built by Fid', 'Design Studio'   # the site's logo lockup, name over line
+WORDMARK, LINE = 'FKarim', 'Design Studio'   # the site's logo lockup, name over line
 COLOURS = dict(ground='#111114', name='#F6F3EC', line='#2DD4A0', stars='#10B981')   # ink, paper, accent-bright, accent
 # the sparkle cluster from basilicalabs.ai (assets/site-header.js): one star, three placements in a 100 x 96 box
 STAR = 'M50 0C54 32 68 46 100 50 68 54 54 68 50 100 46 68 32 54 0 50 32 46 46 32 50 0Z'

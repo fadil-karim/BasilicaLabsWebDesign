@@ -1,7 +1,8 @@
-# Built by Fid
+# FKarim Design Studio
 
-The sales site for Built by Fid, Fadil Karim's design studio, part of
-BasilicaLabs.AI (earlier BasilicaLabs Web Design, then FKarim Web Design): new websites and
+The sales site for FKarim Design Studio, Fadil Karim's design studio, part of
+BasilicaLabs.AI, at <https://fkarimdesign.com/> (earlier BasilicaLabs Web Design,
+FKarim Web Design and Built by Fid): new websites and
 rebuilds, designed, built and live on a temporary link the same day. One page
 that makes the case and takes the brief, plus a themed 404.
 
@@ -28,8 +29,8 @@ public/
                           the brief form
     fonts/                Flux, Instrument Sans, Instrument Serif (upright and italic)
     img/work/             portfolio screenshots, WebP at 800 and 1400 wide
-    img/social-thumbnail-v2.9.jpg   link-preview thumbnail, 1200 × 630
-    img/social-square-v2.9.jpg      square post for Instagram, 1080 × 1080
+    img/social-thumbnail-v2.11.jpg   link-preview thumbnail, 1200 × 630
+    img/social-square-v2.11.jpg      square post for Instagram, 1080 × 1080
     img/favicon-v2.8.svg, img/apple-touch-icon-v2.8.png   the "F." mark
 social/                   sources for the social images (not served)
 brand/                    the square logo as SVG and PNG, and the script
@@ -97,11 +98,11 @@ the bottom of every page.
 
 ## Social images
 
-- **Link-preview thumbnail** (`public/assets/img/social-thumbnail-v2.9.jpg`,
+- **Link-preview thumbnail** (`public/assets/img/social-thumbnail-v2.11.jpg`,
   1200 × 630) — what social sites and messaging apps show when the link is
   shared. The name, the logo and the promise sit in the centre 600 px, so apps
   that crop previews to a square, such as WhatsApp, still show them.
-- **Square post** (`public/assets/img/social-square-v2.9.jpg`, 1080 × 1080) —
+- **Square post** (`public/assets/img/social-square-v2.11.jpg`, 1080 × 1080) —
   for Instagram and other feeds.
 
 Both are rendered from the HTML in `social/`, which uses the site's own fonts
@@ -115,14 +116,14 @@ npx playwright screenshot --viewport-size="1200, 630" \
 ```
 
 Save the result under a new file name (the images are cached as immutable) and
-point `og:image` and `twitter:image` at it.
+point `og:image` and `twitter:image` at it on `https://fkarimdesign.com/`.
 
 ## Square logo
 
 `brand/logo-square.svg` and `brand/logo-square.png` (1080 × 1080) are the logo
 for profile pictures and anywhere else a square mark is needed. The layout is
 the basilicalabs.ai square logo's, at its proportions: the three sparkle stars
-in emerald over "Built by Fid" in white, with "Design Studio" centred underneath
+in emerald over "FKarim" in white, with "Design Studio" centred underneath
 in Instrument Serif, on the site's near-black. Everything sits within three
 quarters of the circle's radius, so a round crop keeps the whole logo.
 
@@ -142,12 +143,12 @@ npx playwright screenshot --viewport-size="1080, 1080" \
 
 - **Brief form.** Posts to `https://formsubmit.co/ajax/fid_kk@proton.me`. If the
   service is blocked, refuses the brief or still needs its one-time
-  confirmation, the visitor's email app opens with the brief filled in. After
-  the domain goes live, send one test brief and click FormSubmit's activation
-  link in the inbox.
-- **Share image.** `og:image` points at `public/assets/img/social-thumbnail-v2.9.jpg` in this
-  repository through jsDelivr's GitHub CDN, because link previews need an
-  absolute address and the site has no domain yet.
+  confirmation, the visitor's email app opens with the brief filled in.
+  FormSubmit confirms each new address once: send one test brief from
+  fkarimdesign.com and click the activation link it emails to the inbox.
+- **Share image.** `og:image` and `twitter:image` load
+  `https://fkarimdesign.com/assets/img/social-thumbnail-v2.11.jpg` from the
+  site's own address.
 - **Links out.** The five portfolio sites, basilicalabs.ai, GitHub, YouTube,
   LinkedIn, Instagram and Telegram.
 
@@ -165,14 +166,10 @@ the brain up beside the lab's name (`-v2.10`). If a homepage's first screen
 ends above 735 px, capture at a smaller 40:21 size, such as 1280 × 672 at
 twice the pixel density, and scale it to 1400 × 735 so no white strip shows.
 
-## When the domain is chosen
+## The domain
 
-In the `<head>` of `index.html`:
-
-```html
-<link rel="canonical" href="https://<domain>/">
-<meta property="og:url" content="https://<domain>/">
-```
-
-Point `og:image` and `twitter:image` at `https://<domain>/assets/img/social-thumbnail-v2.9.jpg`,
-and add a `Sitemap:` line to `robots.txt` if a sitemap is added.
+The site answers at <https://fkarimdesign.com/>. The `<head>` of `index.html`
+names it as the canonical address and as `og:url`, and the link-preview image
+is loaded from it, so a shared link unfurls under that name. The domain is set
+up in Cloudflare, outside this repository: `wrangler.jsonc` carries no route
+for it. Add a `Sitemap:` line to `robots.txt` if a sitemap is ever added.

@@ -4,8 +4,9 @@ Standing policy for this repository. Read it before making any change here.
 
 ## What this repo is
 
-The sales site for Built by Fid, Fadil Karim's design studio, part of
-BasilicaLabs.AI. It was BasilicaLabs Web Design until v2.7 and FKarim Web Design in v2.8. Version 2 is an original design, built from scratch to sell the
+The sales site for FKarim Design Studio, Fadil Karim's design studio, part of
+BasilicaLabs.AI, at https://fkarimdesign.com/. It was BasilicaLabs Web Design until
+v2.7, FKarim Web Design in v2.8 and Built by Fid in v2.9 and v2.10. Version 2 is an original design, built from scratch to sell the
 service; it no longer copies basilicalabs.ai. A Cloudflare Workers static-assets
 site: everything served lives in `public/` and there is no build step - the
 files in that directory are the site. The repo is connected to Cloudflare
@@ -82,15 +83,15 @@ batches: implement, verify, commit, push.
 
 ## Design system
 
-- **Name and logo.** The site is "Built by Fid", with "Design Studio" as the
-  line under the name; the owner renamed it from BasilicaLabs Web Design, then
-  FKarim Web Design. The repository, the
+- **Name and logo.** The site is "FKarim Design Studio": "FKarim", with
+  "Design Studio" as the line under it. The owner renamed it from BasilicaLabs
+  Web Design, then FKarim Web Design, then Built by Fid. The repository, the
   Cloudflare Worker (`basilicalabswebdesign`) and the package name keep the old
   name, because renaming the Worker would cut it off from Workers Builds.
   BasilicaLabs.AI itself stays wherever it is the studio, its Instagram or a
   portfolio site. The favicon is the Flux "F" in paper on an ink tile with an
-  emerald full stop (F for Fid). The lockup is
-  "Built by Fid" in Flux with "Design Studio" centred underneath in Instrument
+  emerald full stop (F for FKarim). The lockup is
+  "FKarim" in Flux with "Design Studio" centred underneath in Instrument
   Serif - upright, never italic - in the accent colour.
   Its size is one token, `--logo-size`, scaling from 28.8px on the smallest
   phones to 38.4px from tablets up; "Design Studio" is .675 of it, and the
@@ -121,19 +122,21 @@ batches: implement, verify, commit, push.
   joins the values of overlapping rules. Fonts and images are cached as
   immutable, so a changed font or image needs a new file name.
 - **Social images.** The link-preview thumbnail
-  (`assets/img/social-thumbnail-v2.9.jpg`, 1200 × 630) and a square post
-  (`assets/img/social-square-v2.9.jpg`, 1080 × 1080) are rendered from
+  (`assets/img/social-thumbnail-v2.11.jpg`, 1200 × 630) and a square post
+  (`assets/img/social-square-v2.11.jpg`, 1080 × 1080) are rendered from
   `social/thumbnail.html` and `social/square.html` with the site's own fonts.
   Keep the thumbnail's logo, headline and chips inside the centre 600 px so a
   square crop (WhatsApp) still shows them, and check it at small sizes. A
   changed image gets a new file name.
-- The thumbnail is referenced through jsDelivr's GitHub CDN until the site has
-  a domain; then point `og:image` at the domain and add `canonical` and
-  `og:url`.
+- **The domain** is https://fkarimdesign.com/. `index.html` names it as the
+  canonical address and `og:url`, and `og:image` and `twitter:image` load the
+  thumbnail from it, so a new thumbnail's name goes into both tags. The domain
+  is set up in Cloudflare, not in `wrangler.jsonc`. FormSubmit asks once to
+  confirm a new address: the first brief sent from the domain triggers it.
 - **Square logo.** `brand/logo-square.svg` and `.png` (1080 × 1080) are the
   owner's chosen layout: basilicalabs.ai's square logo (the three sparkle stars
   stacked over the wordmark, at the proportions measured from the original),
-  with the stars in the accent, "Built by Fid" in paper, "Design Studio" in
+  with the stars in the accent, "FKarim" in paper, "Design Studio" in
   accent-bright centred underneath, on ink. `brand/make_logo.py` draws the SVG
   from the site's fonts with the lettering outlined; change the script and
   redraw, then re-export the PNG, rather than editing either file by hand. Keep
@@ -181,3 +184,4 @@ batches: implement, verify, commit, push.
 | v2.8 | BasilicaLabs Web Design becomes FKarim Web Design | The service now goes by FKarim Web Design everywhere it shows its name: the logo at the top and foot of every page, the page title, the comparison table, the preview that appears when the link is shared, the square Instagram post and the square logo. The icon in the browser tab now shows an F in place of the B, while your BasilicaLabs.AI studio, Instagram and portfolio site keep their own names. |
 | v2.9 | FKarim Web Design becomes Built by Fid | The site now goes by Built by Fid, with Design Studio set in emerald beneath the name in the logo at the top and foot of every page. The new name carries through the page title, the comparison table, the preview that appears when the link is shared, the square Instagram post and the square logo, and the F in the browser tab now stands for Fid. |
 | v2.10 | The Dynamic Connectome Lab card shows its new homepage | The Dynamic Connectome Lab's screenshot now shows its new homepage, with the brain's wiring beside the lab's name at the top of the page, both in its card under your recent work and in the showcase at the top of your page. |
+| v2.11 | FKarim Design Studio, at its own address | The site now goes by FKarim Design Studio, with the FKarim name over Design Studio in the logo at the top and foot of every page. It now calls fkarimdesign.com its home, so shared links point to your own address and show a fresh preview carrying the new name, and the square Instagram post and the square logo match. |
